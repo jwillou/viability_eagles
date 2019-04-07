@@ -1,0 +1,16 @@
+#!/bin/bash 
+
+#PBS -N prothet  
+#PBS -q beagle
+#PBS -l nodes=1:ppn=10,naccesspolicy=shared
+#PBS -l walltime=12:00:00
+#PBS -m abe 
+#PBS -M jwillou@purdue.edu
+#PBS -e sterr.txt
+#PBS -o stout.txt
+
+ 
+cd $PBS_O_WORKDIR
+
+module load gcc/5.2.0 r/3.3.1
+Rscript prothet.R
